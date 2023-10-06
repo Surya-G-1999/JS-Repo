@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json file cretion</title>
+</head>
+<body>
+    <input type="text" placeholder="your name" id="name">
+    <input type="text" placeholder="last name" id="lname">
+    <input type="date"  id="dob">
+    <input type="button" value="pass" onclick="pass()">
+    <input type="text" placeholder="pass word" id="pass" >
+    <script>
+        pass=()=>{
+      let a=document.getElementById('name').value
+      let b=document.getElementById('lname').value
+      let c=new Date( document.getElementById('dob').value)
+      let z=c.getFullYear()
+      let p= a.concat(b,z)
+      let d=document.getElementById('pass').value+=p
+      
+      let obj={
+        name:a,
+        last_name:b,
+        dob:c,
+        year:z,
+        password:d
+      }
+
+      var output=JSON.stringify(obj)
+      console.log(output);
+        }
+    </script>
+</body>
+</html>
